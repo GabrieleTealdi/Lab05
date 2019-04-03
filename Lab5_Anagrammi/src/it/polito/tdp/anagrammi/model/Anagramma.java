@@ -27,6 +27,10 @@ public class Anagramma {
 				l.put(String.valueOf(c), i);
 			}
 		}
+		for(String st: l.keySet()) {
+			System.out.println(st);
+			System.out.println(l.get(st));
+		}
 	}
 
 	public int getLength() {
@@ -63,6 +67,7 @@ public class Anagramma {
 
 	public void remove(String s) {
 		lettere.remove(s);
+		l.put(s, l.get(s)+1);
 	}
 
 	@Override
@@ -71,31 +76,19 @@ public class Anagramma {
 	}
 	
 	public boolean controllaDoppie(String s) {
-		
-		/*if(l.containsKey(s)) {
-			if(l.get(s)==1) {
-				l.put(s, l.get(s)-1);
-				return false;
-			}
-			if(l.get(s)==0)
-				return true;
-			if(l.get(s)>1) {
-				l.put(s, l.get(s)-1);
-				return false;
-			}
-		}
-		return true;*/
-		
-		if(!lettere.contains(s) && l.get(s)>=1) {
+	
+		if(!this.contains(s)) {
 			l.put(s, l.get(s)-1);
 			return false;
 		}
-		if(lettere.contains(s) && l.get(s)>=1) {
+		if(this.contains(s) && l.get(s)>=1) {
 			l.put(s, l.get(s)-1);
 			return false;
 		}
-		if(lettere.contains(s) && l.get(s)==0) 
+		if(this.contains(s) && l.get(s)<=0) {
 			return true;
+		}
+		
 		return true;
 	}
 	

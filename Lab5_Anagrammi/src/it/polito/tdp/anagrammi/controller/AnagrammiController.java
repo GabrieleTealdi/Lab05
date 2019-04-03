@@ -67,7 +67,6 @@ public class AnagrammiController {
         assert txtResCorretti != null : "fx:id=\"txtResCorretti\" was not injected: check your FXML file 'Anagrammi.fxml'.";
         assert txtResErrati != null : "fx:id=\"txtResErrati\" was not injected: check your FXML file 'Anagrammi.fxml'.";
         assert btnReset != null : "fx:id=\"btnReset\" was not injected: check your FXML file 'Anagrammi.fxml'.";
-
     }
     
     public void setModel(AnagrammiModel model) {

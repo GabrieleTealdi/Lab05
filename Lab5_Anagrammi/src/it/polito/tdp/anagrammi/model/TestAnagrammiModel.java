@@ -15,13 +15,13 @@ public class TestAnagrammiModel {
 		Map <String,Integer> l = new HashMap<String, Integer>();
 		for(char c: arr) {
 			if(!l.containsKey(String.valueOf(c)))
-				l.put(String.valueOf(c), 0);
+				l.put(String.valueOf(c), 1);
 			else if(l.containsKey(String.valueOf(c))) {
 				int i = l.get(String.valueOf(c))+1;
 				l.put(String.valueOf(c), i);
 			}
 		}
-		//l.put("n", l.get("n")-1);
+		l.put("n", l.get("n")-1);
 		for(String st: l.keySet()) {
 			System.out.println(st);
 			System.out.println(l.get(st));

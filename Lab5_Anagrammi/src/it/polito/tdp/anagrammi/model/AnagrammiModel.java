@@ -20,7 +20,7 @@ public class AnagrammiModel {
 	
 	private void generaAnagrammi(Anagramma parziale, int L) {
 		if(L==parziale.getLength()) {
-			if (!soluzioni.contains(parziale)) {
+			if (!soluzioni.contains(parziale) && !this.controllaCopioni(parziale)) {
 				//System.out.println(parziale);
 				soluzioni.add(parziale.clone());
 			}
@@ -28,7 +28,7 @@ public class AnagrammiModel {
 		}
 		
 		for(char c: elencoLettere) {
-			if(!parziale.contains(String.valueOf(c))) {
+			if(!parziale.controllaDoppie(String.valueOf(c))) {
 				parziale.addLettera(String.valueOf(c));
 				generaAnagrammi(parziale, L+1);
 				parziale.remove(String.valueOf(c));
@@ -43,4 +43,12 @@ public class AnagrammiModel {
 		return soluzioniEsatte;
 	}
 
+	public boolean controllaCopioni(Anagramma parziale) {
+		for(Anagramma a: soluzioni) {
+			if(a.toString().equals(parziale.toString()))
+				return true;
+		}
+		return false;
+		
+	}
 }
