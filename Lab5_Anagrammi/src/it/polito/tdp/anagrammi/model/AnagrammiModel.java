@@ -28,7 +28,7 @@ public class AnagrammiModel {
 		}
 		
 		for(char c: elencoLettere) {
-			if(!parziale.controllaDoppie(String.valueOf(c))) {
+			if(!parziale.contains(String.valueOf(c))) {
 				parziale.addLettera(String.valueOf(c));
 				generaAnagrammi(parziale, L+1);
 				parziale.remove(String.valueOf(c));

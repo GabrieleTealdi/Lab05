@@ -72,7 +72,7 @@ public class Anagramma {
 	
 	public boolean controllaDoppie(String s) {
 		
-		if(l.containsKey(s)) {
+		/*if(l.containsKey(s)) {
 			if(l.get(s)==1) {
 				l.put(s, l.get(s)-1);
 				return false;
@@ -84,9 +84,9 @@ public class Anagramma {
 				return false;
 			}
 		}
-		return true;
+		return true;*/
 		
-		/*if(!lettere.contains(s) && l.get(s)>=1) {
+		if(!lettere.contains(s) && l.get(s)>=1) {
 			l.put(s, l.get(s)-1);
 			return false;
 		}
@@ -96,7 +96,7 @@ public class Anagramma {
 		}
 		if(lettere.contains(s) && l.get(s)==0) 
 			return true;
-		return true;*/
+		return true;
 	}
 	
 	
